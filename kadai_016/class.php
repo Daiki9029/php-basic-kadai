@@ -7,56 +7,74 @@
   </head>
 
   <body>
-  <p>
-  <?php
-           class Food {
-            private $name;
-            private $price;
+    <p>
+      <?php
+      class Food
+      {
+        private $name;
+        private $price;
 
-            public function food(string $name, int $price) {
-                $this->name = $name;
-                $this->price = $price;
-            }
-            public function show_price() {
-              echo $this->price. '<br>';
-            }
+        public function set_price(int $price)
+        {
+          $this->price = $price;
+        }
+        public function show_price()
+        {
+          echo $this->price . '<br>';
         }
 
-        $food = new Food();
-        $food->food("potate",250);
+        public function __construct(string $name, int $price)
+        {
+          $this->name = $name;
+          $this->price = $price;
+        }
 
 
+      }
+      class Animal
+      {
+        private $name;
+        private $height;
 
+        private $weight;
 
-        class Animal {
-          private $name;
-          private $height;
-          private $weight;
+        public function set_height(int $height)
+        {
+          $this->height = $height;
+        }
+        public function show_height()
+        {
+          echo $this->height . '<br>';
+        }
 
-          public function animal(string $name, int $height, int $weight) {
-              $this->name = $name;
-              $this->height = $height;
-              $this->weight = $weight;
-          }
-          public function show_height() {
-            echo $this->height. '<br>';
-          }
+        public function __construct(string $name, int $height, int $weight)
+        {
+          $this->name = $name;
+          $this->height = $height;
+          $this->weight = $weight;
+        }
+
 
       }
 
-      $animal = new Animal();
-      $animal->animal("dog", 60, 5000);
-
-
-
+      $food = new Food('potate', 250);
       print_r($food);
+
+      $animal = new Animal('dog', 60, 5000);
       print_r($animal);
+
+
+      $food->set_price(250);
       $food->show_price();
+
+
+      $animal->set_height(60);
       $animal->show_height();
 
 
-  ?>
-  </p>
+
+      ?>
+    </p>
   </body>
 
 </html>
