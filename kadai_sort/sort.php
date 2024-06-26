@@ -1,51 +1,25 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>PHP基礎編</title>
-  </head>
-
-  <body>
-    <p>
-      <?php
+<?php
       function sort_2way($array, $order)
       {
-        $nums = [15, 4, 18, 23, 10];
 
         if ($order) {
-          sort_2way($nums, TRUE);
-          sort($nums);
+          sort($array);
           echo "昇順ソート<br>";
-          foreach ($nums as $val) {
-            $array[$val] = $val;
-            echo $array[$val] . '<br>';
-          }
         } else {
-          sort_2way($nums, FALSE);
-          rsort($nums);
+          rsort($array);
           echo "降順<br>";
-          foreach ($nums as $val) {
-            $array[$val] = $val;
-            echo $array[$val] . '<br>';
-          }
         }
+
+        foreach ($array as $val) {
+            echo $val . '<br>';
+        }
+
       }
 
+      $nums = [15, 4, 18, 23, 10];
 
-
-
-
-
-
-
-
-
-
-
+      sort_2way($nums, TRUE);
+      sort_2way($nums, FALSE);
 
       ?>
-    </p>
-  </body>
 
-</html>
